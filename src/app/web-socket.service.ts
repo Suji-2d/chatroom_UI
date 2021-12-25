@@ -12,7 +12,7 @@ export class WebSocketService {
   constructor() { }
 
   public openWebSocket(){
-    this.webSocket = new WebSocket('ws://chatroom-api-1118.herokuapp.com/chat');
+    this.webSocket = new WebSocket('wss://chatroom-api-1118.herokuapp.com/chat');
 
     this.webSocket.onopen = (event)=>{
       console.log('OPEN : ',event);
