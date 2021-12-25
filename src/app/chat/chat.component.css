@@ -1,0 +1,15 @@
+.chat{
+    margin-top: 4rem;
+}
+div.chat-content{ 
+    border-radius: .25rem;
+    height: 20rem;
+    border-color: black;
+    margin-bottom: 2rem;
+}
+.card{
+    height: 100%;
+}
+form{
+    max-width: fit-content;
+}

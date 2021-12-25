@@ -1,0 +1,46 @@
+<header>
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Chat Zone</h5>
+      <span class="text-muted">Feel free to go nutzzz!!</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="chat">
+    <div class="container">
+        <div class="chat-content">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor = "let chatMessage of webSocketService.chatMessages">
+                        <strong>{{chatMessage.user}} : </strong>
+                        <span>{{chatMessage.message}}</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+            <div class="chat-send row g-3">
+                <div class="col-sm-3 " >
+                    <input type="text" class="form-control" name="user" id="input-user" placeholder="Name" ngModel>
+                </div><br>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="message" id="input-message" placeholder="Type your message..." ngModel>
+                </div>
+                <div class="d-grid gap-2 col-sm-3">
+                    <button type="submit" class="btn btn-dark">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+
